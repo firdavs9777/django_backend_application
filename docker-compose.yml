@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .  # Build the image from the Dockerfile in the current directory
+    command: python manage.py runserver 0.0.0.0:8000  # Start the Django server
+    volumes:
+      - ./code/hello:/code/hello  # Mount the hello directory to /code/hello in the container
+    ports:
+      - "8000:8000"  # Map port 8000 of the host to port 8000 of the container
